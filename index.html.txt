@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>주소아지트</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://tailwindcss.com"></script>
+    <style>
+        /* 배경 그리드 패턴 효과 */
+        .bg-grid {
+            background-size: 40px 40px;
+            background-image: linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px);
+        }
+    </style>
+</head>
+<body class="bg-[#0b0f19] bg-grid min-h-screen flex items-center justify-center font-sans antialiased text-white m-0 p-0">
+
+    <!-- 중앙 카드 컨테이너 -->
+    <div class="bg-[#0e1626] border border-[#1e293b] rounded-2xl p-12 max-w-md w-full text-center shadow-[0_0_50px_rgba(0,0,0,0.8)] flex flex-col items-center justify-center">
+        
+        <!-- 로고 영역 -->
+        <div class="mb-6">
+            <span class="text-xs text-[#94a3b8] tracking-widest block mb-1">2026 NEW</span>
+            <div class="flex items-center justify-center gap-1">
+                <span class="text-xl font-black tracking-tighter text-white">주소</span>
+                <span class="text-xl font-black bg-[#ff8a00] text-black px-1.5 py-0.5 rounded">아지트</span>
+            </div>
+            <!-- 로고 하단 오렌지색 밑줄 -->
+            <div class="w-12 h-1 bg-[#ff8a00] mx-auto mt-2 rounded"></div>
+        </div>
+
+        <!-- 메인 타이틀 (수정됨) -->
+        <h1 class="text-2xl font-bold tracking-tight mb-3">
+            공식 주소아지트 커뮤니티
+        </h1>
+
+        <!-- 서브 설명 (수정됨) -->
+        <p class="text-sm text-[#64748b] mb-8 font-medium">
+            안전한 공식 주소와 최신 정보를 확인하세요
+        </p>
+
+        <!-- 바로가기 버튼 -->
+        <a href="https://주소아지트.com" target="_blank" rel="noopener noreferrer" class="inline-block w-full py-3.5 bg-[#ff9f1c] hover:bg-[#ff8a00] text-black font-bold rounded-lg transition-all duration-200 shadow-[0_4px_20px_rgba(255,159,28,0.3)] hover:scale-[1.02]">
+            주소아지트 바로가기
+        </a>
+
+    </div>
+
+</body>
+</html>
