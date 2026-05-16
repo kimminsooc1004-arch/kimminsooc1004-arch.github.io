@@ -1,47 +1,38 @@
-<!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>주소아지트</title>
-    <!-- 시스템 충돌을 방지하는 범용 스타일 시트 로드 -->
-    <link rel="stylesheet" href="https://cloudflare.com">
-    <style>
-        .bg-grid {
-            background-size: 40px 40px;
-            background-image: linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px),
-                              linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px);
-        }
-    </style>
 </head>
-<body class="bg-gray-950 bg-grid min-h-screen flex items-center justify-center font-sans text-white m-0 p-0" style="background-color: #0b0f19;">
+<body style="background-color: #0b0f19; background-image: linear-gradient(to right, rgba(255,255,255,0.02) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.02) 1px, transparent 1px); background-size: 40px 40px; min-h: 100vh; height: 100vh; display: flex; align-items: center; justify-content: center; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; margin: 0; padding: 0; box-sizing: border-box;">
 
-    <!-- 중앙 카드 컨테이너 -->
-    <div class="border rounded-2xl p-12 max-w-md w-full text-center flex flex-col items-center justify-center" style="background-color: #0e1626; border-color: #1e293b; box-shadow: 0 0 50px rgba(0,0,0,0.8);">
+    <!-- 중앙 고급스러운 카드 컨테이너 -->
+    <div style="background-color: #0e1626; border: 1px solid #1e293b; border-radius: 16px; padding: 48px; max-width: 400px; width: 90%; text-align: center; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7); display: flex; flex-direction: column; align-items: center; justify-content: center;">
         
-        <!-- 로고 영역 -->
-        <div class="mb-6">
-            <span class="text-xs tracking-widest block mb-1" style="color: #94a3b8;">2026 NEW</span>
-            <div class="flex items-center justify-center gap-1" style="display: flex; gap: 4px;">
-                <span class="text-xl font-extrabold tracking-tighter text-white">주소</span>
-                <span class="text-xl font-extrabold text-black px-2 py-0.5 rounded" style="background-color: #ff8a00;">아지트</span>
-            </div>
-            <!-- 로고 하단 오렌지색 밑줄 -->
-            <div class="w-12 h-1 mx-auto mt-2 rounded" style="background-color: #ff8a00; width: 48px; height: 4px;"></div>
+        <!-- 상단 2026 NEW 라벨 -->
+        <span style="font-size: 11px; color: #94a3b8; tracking-width: 0.1em; letter-spacing: 2px; display: block; margin-bottom: 6px; font-weight: 600;">2026 NEW</span>
+        
+        <!-- 메인 로고 영역 (주소아지트) -->
+        <div style="display: flex; align-items: center; justify-content: center; gap: 4px; margin-bottom: 12px;">
+            <span style="font-size: 24px; font-weight: 900; letter-spacing: -1px; color: #ffffff;">주소</span>
+            <span style="font-size: 24px; font-weight: 900; color: #000000; background-color: #ff8a00; padding: 2px 8px; border-radius: 4px; margin-left: 2px;">아지트</span>
         </div>
+        
+        <!-- 하단 시그니처 언더라인 -->
+        <div style="width: 48px; height: 4px; background-color: #ff8a00; border-radius: 2px; margin-bottom: 24px;"></div>
 
         <!-- 메인 타이틀 -->
-        <h1 class="text-2xl font-bold tracking-tight mb-3 text-white">
+        <h1 style="font-size: 22px; font-weight: 700; color: #ffffff; margin-top: 0; margin-bottom: 12px; letter-spacing: -0.5px;">
             공식 주소아지트 커뮤니티
         </h1>
 
         <!-- 서브 설명 -->
-        <p class="text-sm mb-8 font-medium" style="color: #64748b; margin-bottom: 32px;">
+        <p style="font-size: 14px; color: #64748b; margin-top: 0; margin-bottom: 36px; font-weight: 500; line-height: 1.5;">
             안전한 공식 주소와 최신 정보를 확인하세요
         </p>
 
-        <!-- 바로가기 버튼 -->
-        <a href="https://xn--hy1b43dy2gk2g.com" target="_blank" rel="noopener noreferrer" class="inline-block w-full py-3.5 text-black font-bold rounded-lg transition-all" style="background-color: #ff9f1c; display: block; width: 100%; padding-top: 14px; padding-bottom: 14px; color: #000000; font-weight: bold; border-radius: 8px; text-decoration: none;">
+        <!-- 바로가기 버튼 (고급스러운 오렌지 그라데이션 및 그림자 효과) -->
+        <a href="https://xn--hy1b43dy2gk2g.com" target="_blank" rel="noopener noreferrer" style="display: block; width: 100%; padding: 14px 0; background: linear-gradient(135deg, #ff9f1c 0%, #ff8a00 100%); color: #000000; font-size: 16px; font-weight: 800; border-radius: 8px; text-decoration: none; box-shadow: 0 4px 20px rgba(255, 138, 0, 0.3); transition: all 0.2s ease; box-sizing: border-box;">
             주소아지트 바로가기
         </a>
 
