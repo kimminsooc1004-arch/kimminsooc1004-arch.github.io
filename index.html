@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>주소아지트</title>
-    <!-- Tailwind CSS CDN 코드를 정확하게 다시 로드합니다 -->
-    <script src="https://tailwindcss.com"></script>
+    <!-- 시스템 충돌을 방지하는 범용 스타일 시트 로드 -->
+    <link rel="stylesheet" href="https://cloudflare.com">
     <style>
         .bg-grid {
             background-size: 40px 40px;
@@ -14,28 +14,34 @@
         }
     </style>
 </head>
-<body class="bg-[#0b0f19] bg-grid min-h-screen flex items-center justify-center font-sans antialiased text-white m-0 p-0">
+<body class="bg-gray-950 bg-grid min-h-screen flex items-center justify-center font-sans text-white m-0 p-0" style="background-color: #0b0f19;">
 
-    <div class="bg-[#0e1626] border border-[#1e293b] rounded-2xl p-12 max-w-md w-full text-center shadow-[0_0_50px_rgba(0,0,0,0.8)] flex flex-col items-center justify-center">
+    <!-- 중앙 카드 컨테이너 -->
+    <div class="border rounded-2xl p-12 max-w-md w-full text-center flex flex-col items-center justify-center" style="background-color: #0e1626; border-color: #1e293b; box-shadow: 0 0 50px rgba(0,0,0,0.8);">
         
+        <!-- 로고 영역 -->
         <div class="mb-6">
-            <span class="text-xs text-[#94a3b8] tracking-widest block mb-1">2026 NEW</span>
-            <div class="flex items-center justify-center gap-1">
-                <span class="text-xl font-black tracking-tighter text-white">주소</span>
-                <span class="text-xl font-black bg-[#ff8a00] text-black px-1.5 py-0.5 rounded">아지트</span>
+            <span class="text-xs tracking-widest block mb-1" style="color: #94a3b8;">2026 NEW</span>
+            <div class="flex items-center justify-center gap-1" style="display: flex; gap: 4px;">
+                <span class="text-xl font-extrabold tracking-tighter text-white">주소</span>
+                <span class="text-xl font-extrabold text-black px-2 py-0.5 rounded" style="background-color: #ff8a00;">아지트</span>
             </div>
-            <div class="w-12 h-1 bg-[#ff8a00] mx-auto mt-2 rounded"></div>
+            <!-- 로고 하단 오렌지색 밑줄 -->
+            <div class="w-12 h-1 mx-auto mt-2 rounded" style="background-color: #ff8a00; width: 48px; height: 4px;"></div>
         </div>
 
+        <!-- 메인 타이틀 -->
         <h1 class="text-2xl font-bold tracking-tight mb-3 text-white">
             공식 주소아지트 커뮤니티
         </h1>
 
-        <p class="text-sm text-[#64748b] mb-8 font-medium">
+        <!-- 서브 설명 -->
+        <p class="text-sm mb-8 font-medium" style="color: #64748b; margin-bottom: 32px;">
             안전한 공식 주소와 최신 정보를 확인하세요
         </p>
 
-        <a href="https://주소아지트.com" target="_blank" rel="noopener noreferrer" class="inline-block w-full py-3.5 bg-[#ff9f1c] hover:bg-[#ff8a00] text-black font-bold rounded-lg transition-all duration-200 shadow-[0_4px_20px_rgba(255,159,28,0.3)] hover:scale-[1.02]">
+        <!-- 바로가기 버튼 -->
+        <a href="https://xn--hy1b43dy2gk2g.com" target="_blank" rel="noopener noreferrer" class="inline-block w-full py-3.5 text-black font-bold rounded-lg transition-all" style="background-color: #ff9f1c; display: block; width: 100%; padding-top: 14px; padding-bottom: 14px; color: #000000; font-weight: bold; border-radius: 8px; text-decoration: none;">
             주소아지트 바로가기
         </a>
 
