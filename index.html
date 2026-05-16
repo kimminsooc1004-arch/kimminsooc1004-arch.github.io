@@ -1,42 +1,184 @@
+<!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>주소아지트</title>
-</head>
-<body style="background-color: #0b0f19; background-image: linear-gradient(to right, rgba(255,255,255,0.02) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.02) 1px, transparent 1px); background-size: 40px 40px; min-height: 100vh; height: 100vh; display: flex; align-items: center; justify-content: center; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; margin: 0; padding: 0; box-sizing: border-box;">
+    <title>주소아지트 - 간편한 나의 주소록</title>
+    <style>
+        /* 폰트 및 기본 테마 설정 */
+        @import url('https://googleapis.com');
 
-    <!-- 중앙 고급스러운 카드 컨테이너 -->
-    <div style="background-color: #0e1626; border: 1px solid #1e293b; border-radius: 16px; padding: 48px; max-width: 400px; width: 90%; text-align: center; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7); display: flex; flex-direction: column; align-items: center; justify-content: center;">
-        
-        <!-- 상단 2026 NEW 라벨 -->
-        <span style="font-size: 11px; color: #94a3b8; letter-spacing: 2px; display: block; margin-bottom: 6px; font-weight: 600;">2026 NEW</span>
-        
-        <!-- 메인 로고 영역 (주소아지트) -->
-        <div style="display: flex; align-items: center; justify-content: center; gap: 4px; margin-bottom: 12px;">
-            <span style="font-size: 24px; font-weight: 900; letter-spacing: -1px; color: #ffffff;">주소</span>
-            <span style="font-size: 24px; font-weight: 900; color: #000000; background-color: #ff8a00; padding: 2px 8px; border-radius: 4px; margin-left: 2px;">아지트</span>
+        :root {
+            --bg-color: #F9F6F0; /* 이미지의 부드러운 아이보리 배경색 */
+            --primary-red: #E63935; /* 심볼에 사용된 메인 레드 컬러 */
+            --dark-blue: #1A2E40; /* '주소아지트' 텍스트의 딥 네이비 컬러 */
+            --sub-text: #4A5568; /* '간편한 나의 주소록' 및 설명 텍스트 컬러 */
+            --white: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--dark-blue);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* 메인 레이아웃 및 헤더 구조 */
+        header {
+            width: 100%;
+            max-width: 600px;
+            padding: 50px 20px 30px 20px;
+            text-align: center;
+        }
+
+        .logo-container {
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+
+        /* 이미지 속 로고 그래픽을 재현한 SVG 스타일 */
+        .logo-svg {
+            width: 160px;
+            height: auto;
+        }
+
+        h1 {
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--dark-blue);
+            letter-spacing: -1px;
+            margin-bottom: 8px;
+        }
+
+        .subtitle {
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--sub-text);
+            letter-spacing: 0.5px;
+            margin-bottom: 40px;
+        }
+
+        /* 핵심 주소 링크 섹션 */
+        main {
+            width: 100%;
+            max-width: 600px;
+            padding: 0 20px;
+            flex-grow: 1;
+        }
+
+        .notice-card {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+            border: 1px solid rgba(26, 46, 64, 0.05);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .notice-card h2 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: var(--primary-red);
+        }
+
+        .notice-card p {
+            font-size: 14px;
+            color: var(--sub-text);
+            line-height: 1.6;
+        }
+
+        /* 메인 바로가기 버튼 */
+        .cta-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--primary-red);
+            color: var(--white);
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 700;
+            padding: 18px;
+            border-radius: 14px;
+            box-shadow: 0 6px 16px rgba(230, 57, 53, 0.2);
+            transition: all 0.2s ease;
+            margin-top: 10px;
+        }
+
+        .cta-button:hover {
+            background-color: #D32F2F;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(230, 57, 53, 0.3);
+        }
+
+        .cta-button:active {
+            transform: translateY(0);
+        }
+
+        /* 하단 카피라이트 정보 */
+        footer {
+            padding: 40px 20px;
+            text-align: center;
+            font-size: 12px;
+            color: #A0AEC0;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <!-- 로고 이미지 영역 (SVG로 완벽 구현) -->
+        <div class="logo-container">
+            <svg class="logo-svg" viewBox="0 0 200 160" fill="none" xmlns="http://w3.org">
+                <!-- 지평선 곡선 라인 -->
+                <path d="M20 120C70 140 130 140 180 120" stroke="#E63935" stroke-width="8" stroke-linecap="round"/>
+                <!-- 집 몸체 구조 -->
+                <path d="M60 85V120H140V85" stroke="#E63935" stroke-width="8" stroke-linejoin="round"/>
+                <!-- 굴뚝 -->
+                <path d="M130 55V40H142V67" fill="#E63935"/>
+                <!-- 지붕 삼각형 구조 -->
+                <path d="M45 85L100 35L155 85" stroke="#E63935" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+                <!-- 다락방 창문 -->
+                <rect x="92" y="55" width="16" height="12" rx="2" stroke="#E63935" stroke-width="4"/>
+                <line x1="100" y1="55" x2="100" y2="67" stroke="#E63935" stroke-width="2"/>
+                <!-- 현관문 -->
+                <path d="M88 120V92C88 88.6863 90.6863 86 94 86H106C109.314 86 112 88.6863 112 92V120H88Z" fill="#E63935"/>
+                <!-- 위치 핀 아이콘 (문 손잡이 및 위치 포인트 역할) -->
+                <path d="M100 125C96 125 93 122 93 118C93 112 100 105 100 105C100 105 107 112 107 118C107 122 104 125 100 125Z" fill="#FFFFFF"/>
+                <circle cx="100" cy="116" r="2" fill="#E63935"/>
+            </svg>
         </div>
         
-        <!-- 하단 시그니처 언더라인 -->
-        <div style="width: 48px; height: 4px; background-color: #ff8a00; border-radius: 2px; margin-bottom: 24px;"></div>
+        <!-- 대타이틀 문구 -->
+        <h1>주소아지트</h1>
+        <div class="subtitle">간편한 나의 주소록</div>
+    </header>
 
-        <!-- 메인 타이틀 -->
-        <h1 style="font-size: 22px; font-weight: 700; color: #ffffff; margin-top: 0; margin-bottom: 12px; letter-spacing: -0.5px;">
-            공식 주소아지트 커뮤니티
-        </h1>
+    <main>
+        <!-- 기존 사이트 컨텐츠가 들어갈 정보 카드 카드 영역 -->
+        <section class="notice-card">
+            <h2>📢 공식 주소아지트 커뮤니티</h2>
+            <p>안전한 공식 주소와 최신 정보를 확인하세요.<br>사칭 사이트에 주의하시고 반드시 아래 공식 링크를 통해 접속 바랍니다.</p>
+        </section>
 
-        <!-- 서브 설명 -->
-        <p style="font-size: 14px; color: #64748b; margin-top: 0; margin-bottom: 36px; font-weight: 500; line-height: 1.5;">
-            안전한 공식 주소와 최신 정보를 확인하세요
-        </p>
-
-        <!-- 바로가기 버튼 (한글 도메인 브라우저 호환성 무조건 해결 버전) -->
-        <a href="https://주소아지트.com" target="_blank" rel="noopener noreferrer" style="display: block; width: 100%; padding: 14px 0; background: linear-gradient(135deg, #ff9f1c 0%, #ff8a00 100%); color: #000000; font-size: 16px; font-weight: 800; border-radius: 8px; text-decoration: none; box-shadow: 0 4px 20px rgba(255, 138, 0, 0.3); box-sizing: border-box;">
+        <!-- 핵심 Action 버튼 링크 -->
+        <a href="https://xn--9l4b21et1dqwa914a.com/" class="cta-button">
             주소아지트 바로가기
         </a>
+    </main>
 
-    </div>
+    <footer>
+        <p>&copy; 2026 주소아지트. All New Design Rights Reserved.</p>
+    </footer>
 
 </body>
 </html>
